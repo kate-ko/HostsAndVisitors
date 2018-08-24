@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>HOST and VISIT</h2>
+        <p><button id="secret" type="button" class="btn btn-primary">Send Secret</button></p>
+        <label>Enter name of a friendly host:</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Host name" id="host-name" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-info" type="button" id="visit-button">Visit</button>
+            </div>
+        </div>
+        <p>Hosts I have already visited: </p>
+        <ul class="hosts">
+        </ul>
+
+        <p>Visitors who I hosted</p>
+        <ul class="visitors">
+        </ul>
+    </div>
+</body>
+
+<script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="handlebars/dist/handlebars.min.js"></script>
+<script id="hosts-template" type="text/x-handlebars-template">
+      {{#each this}}
+        <li>{{name}} {{text}}</li>
+      {{/each}}
+</script>
+<script id="visitors-template" type="text/x-handlebars-template">
+    {{#each this}}
+        <li>{{name}}</li>
+    {{/each}}
+</script>
+<script src="main.js"></script>
+
+</html>
